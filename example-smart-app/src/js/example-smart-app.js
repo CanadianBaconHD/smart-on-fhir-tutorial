@@ -23,14 +23,15 @@
 
 
 		var algy = smart.patient.api.fetchAll({
-			type: 'Allergy Intolerance'
-			
-			
+			"type": 'Allergy Intolerance',
+			"query": {
+				 "clinical-status": 'active'
+			}			
 		});
 		
         $.when(pt, obv, algy).fail(onError);
 
-        $.when(pt, obv, algy).done(function(patient, obv, allergy) {
+        $.when(pt, obv, algy).done(function(patient, obv, allergies) {
           var byCodes = smart.byCodes(obv, 'code');
           var gender = patient.gender;
 
