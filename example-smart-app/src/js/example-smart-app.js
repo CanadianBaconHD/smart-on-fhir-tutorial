@@ -57,9 +57,24 @@
           var hdl = byCodes('2085-9');
           var ldl = byCodes('2089-1');
 
+		  var allergyTable = "<Table>";
+		  var allergyLen = allergies.length;
+		  for (var i=0;i<allergyLen;i++) {
+			    var reactionStr = [];
+				if(allergies[i].reaction !== undefined) {
+					for(var j=0,jLen=allergies[i].reaction.length;j<jLen;j++) {
+						reactionStr.push(allergies[i].reaction[j].manifestation[0].text);
+					}
+				}
+				allergyTable += "<tr><td>"+allergies[i].code.text+"</td></td>"+reactionStr.join(", ")+"</td></tr>";
+		  }
+		  if (allergyLen === 0) {
+			  allergyTable += "<tr><td>No Allergies Found</td></tr>";
+		  }
+		  allergyTable += "</table>";
+
           var p = defaultPatient();
           p.birthdate = patient.birthDate;
-		  p.age = parseInt(calculateAge(dob));
           p.gender = gender;
           p.fname = fname;
           p.lname = lname;
@@ -75,7 +90,7 @@
 
           p.hdl = getQuantityValueAndUnit(hdl[0]);
           p.ldl = getQuantityValueAndUnit(ldl[0]);
-		  p.alg = "a bad allergy";
+		  p.alg = allergyTable;
 
           ret.resolve(p);
         });
