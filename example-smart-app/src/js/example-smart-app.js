@@ -21,9 +21,16 @@
                     }
                   });
 
-        $.when(pt, obv).fail(onError);
 
-        $.when(pt, obv).done(function(patient, obv) {
+		var algy = smart.patient.api.fetchAll({
+			type: 'Allergy Intolerance'
+			
+			
+		});
+		
+        $.when(pt, obv, algy).fail(onError);
+
+        $.when(pt, obv, algy).done(function(patient, obv, allergy) {
           var byCodes = smart.byCodes(obv, 'code');
           var gender = patient.gender;
 
