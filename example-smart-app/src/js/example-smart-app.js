@@ -40,7 +40,7 @@
 		  var dob = new Date(patient.birthDate);
 		  var day = dob.getDate();
 		  var monthIndex = dob.getMonth() + 1;
-		  var year - dob.getFullYear();
+		  var year = dob.getFullYear();
 		  
 		  var dobStr = monthIndex + '/' + day + '/' + year;
 		  var fname = '';
