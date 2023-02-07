@@ -74,6 +74,7 @@
 
           p.hdl = getQuantityValueAndUnit(hdl[0]);
           p.ldl = getQuantityValueAndUnit(ldl[0]);
+		  p.alg = "a bad allergy";
 
           ret.resolve(p);
         });
