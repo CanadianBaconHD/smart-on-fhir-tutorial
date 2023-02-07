@@ -69,7 +69,7 @@
 				allergyTable += "<tr><td>"+allergies[i].code.text+"</td></td>"+reactionStr.join(", ")+"</td></tr>";
 		  }
 		  */
-		  
+		  		  var allergyIntolerance = allergies
 		  for (var i = 0; i < allergyIntolerances.length; i++) {
   var allergyIntolerance = allergyIntolerances[i];
   console.log("Patient Name: " + allergyIntolerance.patientName);
