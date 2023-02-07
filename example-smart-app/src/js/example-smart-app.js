@@ -59,7 +59,7 @@
 
 		  var allergyTable = "<Table>";
 		  var allergyLen = allergies.length;
-		  for (var i=0;i<allergyLen;i++) {
+		  /*for (var i=0;i<allergyLen;i++) {
 			    var reactionStr = [];
 				if(allergies[i].reaction !== undefined) {
 					for(var j=0,jLen=allergies[i].reaction.length;j<jLen;j++) {
@@ -68,6 +68,16 @@
 				}
 				allergyTable += "<tr><td>"+allergies[i].code.text+"</td></td>"+reactionStr.join(", ")+"</td></tr>";
 		  }
+		  */
+		  
+		  for (var i = 0; i < allergyIntolerances.length; i++) {
+  var allergyIntolerance = allergyIntolerances[i];
+  console.log("Patient Name: " + allergyIntolerance.patientName);
+  console.log("Allergen: " + allergyIntolerance.allergen);
+  console.log("Reaction: " + allergyIntolerance.reaction);
+  console.log("Onset Date: " + allergyIntolerance.onsetDate);
+  console.log("----------------");
+}
 		  if (allergyLen === 0) {
 			  allergyTable += "<tr><td>No Allergies Found</td></tr>";
 		  }
