@@ -60,10 +60,10 @@
 		  var allergyTable = "<Table>";
 		  var allergyLen = allergies.length;
 		  
-		  for (var i=0, jLen=allergies[i].reaction.length; i < allergyLen; i++) {
+		  for (var i=0; i < allergyLen; i++) {
 			    var reactionStr = [];
 				if(allergies[i].reaction !== undefined) {
-					for(var j=0; j < jLen; j++) {
+					for(var j=0; j < jLen=allergies[i].reaction.length;j<jLen; j++) {
 						reactionStr.push(allergies[i].reaction[j].manifestation[0].text);
 					}
 				}
@@ -75,6 +75,9 @@
 			  allergyTable += "<tr><td>No Allergies Found</td></tr>";
 		  }
 		  allergyTable += "</table>";
+
+
+
 
           var p = defaultPatient();
           p.birthdate = patient.birthDate;
