@@ -32,10 +32,18 @@
         $.when(pt, obv, alg).fail(onError);
 
         $.when(pt, obv, alg).done(function(patient, obv, allergies) {
+			console.log(patient)
+			console.log(obv)
+			console.log(allergies)
           var byCodes = smart.byCodes(obv, 'code');
           var gender = patient.gender;
-
-          var fname = '';
+		  var dob = new Date(patient.birthDate);
+		  var day = dob.getDate();
+		  var monthIndex = dob.getMonth() + 1;
+		  var year - dob.getFullYear();
+		  
+		  var dobStr = monthIndex + '/' + day + '/' + year;
+		  var fname = '';
           var lname = '';
 
           if (typeof patient.name[0] !== 'undefined') {
