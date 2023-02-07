@@ -65,8 +65,9 @@
 					for(var j=0,jLen=allergies[i].reaction.length;j<jLen;j++) {
 						reactionStr.push(allergies[i].reaction[j].manifestation[0].text);
 					}
-				}
 				allergyTable += "<tr><td>"+allergies[i].code.text+"</td></td>"+reactionStr.join(", ")+"</td></tr>";
+				}
+				
 		  }
 		  
 		
